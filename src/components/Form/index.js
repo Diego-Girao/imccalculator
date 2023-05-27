@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Button, Text, TextInput, View } from "react-native"
+import { Button, Text, TextInput, View, StyleSheet } from "react-native"
 
 import ResultImc from "../ResultImc"
 
@@ -31,23 +31,48 @@ export default function Form(props) {
 	return (
 		<View>
 			<View>
-				<Text>Altura</Text>
+				<Text style={styles.titles}>Altura</Text>
 				<TextInput
+					style={styles.placeholder}
 					onChangeText={setHeight}
 					value={height}
 					placeholder="Ex. 1.83"
 					keyboardType="numeric"
 				></TextInput>
-				<Text>Peso</Text>
+				<Text style={styles.titles}>Peso</Text>
 				<TextInput
+					style={styles.placeholder}
 					onChangeText={setWeight}
 					value={weight}
 					placeholder="Ex. 82"
 					keyboardType="numeric"
 				></TextInput>
-				<Button title={titleButton} onPress={() => validationImc()} />
+				<Button
+					color="#4B0082"
+					title={titleButton}
+					onPress={() => validationImc()}
+				/>
 			</View>
 			<ResultImc messageResultImc={messageImc} resultImc={imc} />
 		</View>
 	)
 }
+
+const styles = StyleSheet.create({
+	titles: {
+		fontSize: 24,
+		fontWeight: "bold",
+		color: "#4B0082",
+		paddingTop: 12,
+	},
+	placeholder: {
+		paddingTop: 5,
+		paddingBottom: 20,
+	},
+	result: {
+		fontSize: 24,
+		fontWeight: "bold",
+		color: "#4B0082",
+		paddingTop: 12,
+	},
+})
