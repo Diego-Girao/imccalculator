@@ -1,10 +1,11 @@
 import React from "react"
-import { Text, View } from "react-native"
+import { View } from "react-native"
+import Form from "../Form"
 
 export default function Main() {
 	return (
 		<View>
-			<Text>Main</Text>
+			<Form />
 		</View>
 	)
 }
