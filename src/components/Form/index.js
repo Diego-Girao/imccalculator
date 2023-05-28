@@ -1,9 +1,10 @@
 import React, { useState } from "react"
-import { Button, Text, TextInput, View, StyleSheet } from "react-native"
+import { Text, TextInput, View, TouchableOpacity } from "react-native"
+import styles from "./style"
 
-import ResultImc from "../ResultImc"
+import ResultImc from "./ResultImc"
 
-export default function Form(props) {
+export default function Form() {
 	const [height, setHeight] = useState(null)
 	const [weight, setWeight] = useState(null)
 	const [messageImc, setMessageImc] = useState("Informe o peso e altura")
@@ -25,54 +26,38 @@ export default function Form(props) {
 		}
 		setImc(null)
 		setTitleButton("Calcular")
-		setMessageImc("Informe o peso e altura")
+		setMessageImc("Informe o seu peso e a sua altura")
 	}
 
 	return (
-		<View>
-			<View>
-				<Text style={styles.titles}>Altura</Text>
+		<View style={styles.formContext}>
+			<View style={styles.form}>
+				<Text style={styles.formLabel}>Altura</Text>
 				<TextInput
-					style={styles.placeholder}
+					style={styles.input}
 					onChangeText={setHeight}
 					value={height}
 					placeholder="Ex. 1.83"
 					keyboardType="numeric"
+					placeholderTextColor="#696969"
 				></TextInput>
-				<Text style={styles.titles}>Peso</Text>
+				<Text style={styles.formLabel}>Peso</Text>
 				<TextInput
-					style={styles.placeholder}
+					style={styles.input}
 					onChangeText={setWeight}
 					value={weight}
 					placeholder="Ex. 82"
 					keyboardType="numeric"
+					placeholderTextColor="#696969"
 				></TextInput>
-				<Button
-					color="#4B0082"
-					title={titleButton}
+				<TouchableOpacity
+					style={styles.buttonCalculator}
 					onPress={() => validationImc()}
-				/>
+				>
+					<Text style={styles.textButtonCalculator}>{titleButton}</Text>
+				</TouchableOpacity>
 			</View>
 			<ResultImc messageResultImc={messageImc} resultImc={imc} />
 		</View>
 	)
 }
-
-const styles = StyleSheet.create({
-	titles: {
-		fontSize: 24,
-		fontWeight: "bold",
-		color: "#4B0082",
-		paddingTop: 12,
-	},
-	placeholder: {
-		paddingTop: 5,
-		paddingBottom: 20,
-	},
-	result: {
-		fontSize: 24,
-		fontWeight: "bold",
-		color: "#4B0082",
-		paddingTop: 12,
-	},
-})
