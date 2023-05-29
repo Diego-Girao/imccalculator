@@ -3,7 +3,14 @@
 Este é um aplicativo simples desenvolvido em React Native para calcular o Índice de Massa Corporal (IMC) de uma pessoa.
 
 ## Demonstração
-https://github.com/Diego-Girao/imccalculator/assets/70491871/b0c3c3ae-7c9e-468f-8c73-2aae39644126
+  
+#### Versão atual
+
+  [Versão Atual](https://github.com/Diego-Girao/imccalculator/assets/70491871/8dcf6893-eccd-4f55-86a2-7697cbbb61bb)
+
+#### Primeira versão
+
+  [Primeira Versão](https://github.com/Diego-Girao/imccalculator/assets/70491871/b0c3c3ae-7c9e-468f-8c73-2aae39644126)
 
 ## Funcionalidades
 
